@@ -1,4 +1,4 @@
-from django.test import TestCase
+from django.test import TestCase, Client
 from .models import * 
 # Create your tests here.
 
@@ -19,3 +19,9 @@ class ActorTestCase(TestCase):
     def test_actor_str_representation(self):
         actor = Actor.objects.create(name="Leonardo DiCaprio")
         self.assertEqual(str(actor), "Leonardo DiCaprio")
+
+class WebPageTest(TestCase):
+    def test_request(self):
+        c = Client()
+        response = c.get('')
+        self.assertEqual(response.status_code, 200)
