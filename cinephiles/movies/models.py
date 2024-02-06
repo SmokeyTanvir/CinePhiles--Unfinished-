@@ -8,7 +8,7 @@ class Genre(models.Model):
 
 class Actor(models.Model):
     name = models.CharField(max_length=100)
-    thumbnail = models.ImageField(upload_to='thumbnails/', null=True)
+    thumbnail = models.ImageField(upload_to='Actors/', null=True)
     bio = models.TextField()
 
     def __str__(self):
@@ -16,7 +16,7 @@ class Actor(models.Model):
 
 class Movie(models.Model):
     title = models.CharField(max_length=200)
-    thumbnail = models.ImageField(upload_to='thumbnails/', null=True)
+    thumbnail = models.ImageField(upload_to='Thumbnails/', null=True)
     release_date = models.DateField()
     duration = models.PositiveIntegerField()  # Duration in minutes
     rating = models.DecimalField(max_digits=3, decimal_places=1)
