@@ -8,6 +8,6 @@ jobs:
     - uses: actions/checkout@v2
     - name: Runs Django Tests
       run: |
+        pip3 install -r requirements.txt
         cd cinephiles
-        pip3 install --user django 
         python manage.py test 
